@@ -61,3 +61,9 @@ group :development do
 end
 
 gem 'rails-controller-testing', group: [ :test ]
+gem "bootstrap", "~> 5.3"
+gem "autoprefixer-rails"
+gem "font-awesome-sass", "~> 6.1"
+gem "simple_form"
+gem "sassc-rails"
+gem "ostruct"
