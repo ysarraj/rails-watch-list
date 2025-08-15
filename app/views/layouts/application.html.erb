@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsWatchList</title>
+    <title>MyWatchList</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,7 +10,43 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+ <body style="background-image: url('<%= image_path('background.png') %>'); background-size: cover; background-position: center; background-repeat: no-repeat;">    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <%= link_to "MyWatchList", lists_path, class: "navbar-brand fw-bold" %>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <%= link_to "Lists", lists_path, class: "nav-link #{current_page?(lists_path) ? 'active' : ''}" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "New List", new_list_path, class: "nav-link #{current_page?(new_list_path) ? 'active' : ''}" %>
+            </li>
+          </ul>
+          
+          <ul class="navbar-nav">
+
+          </ul>
+        </div>
+      </div>
+  </nav>
     <%= yield %>
+  <div class="footer ">
+    <div class="footer-links">
+      <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+    </div>
+  </div>
   </body>
+  
 </html>
